@@ -1,0 +1,24 @@
+{% macro columns(records) %}
+{% for record in records %}
+<div class="flex four s-twelve no-margin col">
+    <div class="no-grow">
+        <h2 class="wrap">{{record.gettitle()}}</h2>
+    </div>
+    <div>{{record|excerpt(250)}}</div>
+    <div class="no-grow">
+        <a href="{{record.link}}">Read more...</a>
+    </div>
+</div>
+{% endfor %}
+{% endmacro %}
+
+{% macro pagecolumn(record, loop) %}
+    <div class="pagecol six m-twelve flex col no-margin no-grow {{loop.index0 is even ? ' even': ' odd'}}{{loop.first ? ' featured': ''}}">
+        <div class="columnimage slanted-border" style="background-image:url({{record.getimage()|image(960,600,'c')}})"></div>
+        <div class="textholder">
+            <h2 class="wrap">{{record.gettitle()}}</h2>
+            <p>{{record|excerpt(500)}}</p>
+            <a href="{{record.link}}">Read more...</a>
+        </div>
+    </div>
+{% endmacro %}

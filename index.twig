@@ -1,0 +1,47 @@
+{% extends '_partials/_base.twig' %}
+{% block body %}
+
+{#{% setcontent records = 'entries/latest/3' %}#}
+{% setcontent record = 'page/1' %}
+
+{% if record %}
+{% set images =  record.imagelist ? record.imagelist : theme.images %}
+<div class="Wallop" data-autoplay="5000">
+  <div class="Wallop-list">
+        {% for image in images %}
+            <div
+                 class="Wallop-item sliderbg align center"
+                 style="background-image:url({{image|image(1920,1080,'r')}})">
+                {% if image.title %}
+                    <p>{{image.title}}</p>
+                {% endif %}
+            </div>
+        {% endfor %}
+  </div>
+</div>
+<div class="flex container margin">
+        <div class="twelve">
+            <h1>{{record.gettitle()}}</h1>
+            {{(record.body ? record.body : '<p>'~record|excerpt('1000000')|trim|preg_replace('/(\r?\n){2,}/', '</p><p>')~'</p>')|raw}}
+        </div>
+    </div>
+{% endif %}
+{% if records %}
+    {% if not record %}
+        <div class="Wallop" data-autoplay="5000">
+            <div class="Wallop-list">
+                {% for record in records %}
+                    <div
+                         class="Wallop-item sliderbg align center"
+                         style="background-image:url({{record.getImage()|image(1920,1080,'r')}})">
+                        <p><a href="{{record.link}}">{{record.gettitle()}}</a></p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+    <div class="flex margin container three-cols-layout">
+        {{macros.columns(records)}}
+    </div>
+{% endif %}
+{% endblock %}
