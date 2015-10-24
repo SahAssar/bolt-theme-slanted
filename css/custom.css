@@ -1,0 +1,236 @@
+body {
+    font-size: 1.125rem;
+    line-height: 1.5625rem;
+}
+
+h1 {
+    font-size: 3.8125rem;
+    line-height: 4.6875rem;
+    margin-top: 3.125rem;
+    margin-bottom: 1.5625rem;
+}
+
+h2 {
+    font-size: 2.5625rem;
+    line-height: 3.125rem;
+    margin-top: 4.6875rem;
+    margin-bottom: 1.5625rem;
+}
+
+h3 {
+    font-size: 1.6875rem;
+    line-height: 3.125rem;
+    margin-top: 1.5625rem;
+    margin-bottom: 1.5625rem;
+}
+
+h4 {
+    font-size: 1.125rem;
+    line-height: 1.5625rem;
+    margin-top: 1.5625rem;
+    margin-bottom: 1.5625rem;
+}
+
+body {
+    font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: "Montserrat", HelveticaNeue, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.menu {
+    background: #fff;
+}
+
+.Wallop-item{
+    height:60vh;
+}
+.Wallop-item a {
+    color: inherit;
+    text-decoration: none;
+    font-size: 40px;
+    display: block;
+}
+
+.slanted-border,
+.sliderbg p {
+    position: relative;
+}
+
+.sliderbg::after, .sliderbg::before, .sliderbg p::after,.sliderbg p::before, .slanted-border::before, .slanted-border::after {
+    border: none;
+    z-index: 2;
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+}
+
+.sliderbg p {
+    margin-bottom: 0;
+    background-color: rgba(255,255,255,0.5);
+}
+
+.sliderbg p::after {
+    top: 0;
+    border-top: 10vh solid transparent;
+    -webkit-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    transform: translateY(-100%);
+}
+
+.sliderbg p::before {
+    bottom: 0;
+    border-bottom: 10vh solid transparent;
+    -webkit-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    transform: translateY(100%);
+}
+
+.sliderbg p::after {
+    border-right: 100vw solid rgba(255,255,255,0.5);
+}
+
+.sliderbg p::before {
+    border-left: 100vw solid rgba(255,255,255,0.5);
+}
+
+.sliderbg.sliderbg {
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    overflow: hidden;
+}
+
+.sliderbg::before, .slanted-border::before {
+    border-bottom: 10vh solid transparent;
+    top: 0;
+}
+
+.sliderbg::before {
+    border-left: 100vw solid #FFF;
+}
+
+.sliderbg::after, .slanted-border::after {
+    border-top: 10vh solid transparent;
+    bottom: 0;
+}
+
+.sliderbg::after {
+    border-right: 100vw solid #FFF;
+}
+
+.pagecol {
+    position: relative;
+    z-index: 3;
+}
+
+.slanted-border::before {
+    border-left: 50vw solid #FFF;
+}
+
+.slanted-border::after {
+    border-right: 50vw solid #FFF;
+}
+
+h2.wrap {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.columnimage {
+    height: 60vh;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+}
+
+.pagecol {
+    text-align: center;
+}
+
+.pagecol.odd .textholder {
+    -webkit-box-ordinal-group: 0;
+    -webkit-order: -1;
+        -ms-flex-order: -1;
+            order: -1;
+}
+
+.textholder {
+    height: 40vh;
+    max-width: 30vw;
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+    display: inline-block;
+}
+.textholder h2{
+margin-top: 0;
+}
+
+.pagecol.featured {
+    background-color: #222;
+    color: white;
+}
+
+.pagecol.featured .slanted-border::after {
+    border-right: 50vw solid #222;
+}
+
+.pagecol.featured  + .pagecol + .pagecol .slanted-border::before {
+    border-left: 50vw solid #222;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    min-height: 10vh;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer ul {
+    list-style: none;
+}
+
+@media (max-width: 1100px) {
+    .textholder.textholder.textholder {
+        height: auto;
+        max-width: 90vw;
+        -webkit-box-ordinal-group: 1;
+        -webkit-order: 0;
+            -ms-flex-order: 0;
+                order: 0;
+    }
+
+    .pagecol.featured  + .pagecol .slanted-border::before {
+        border-left: 100vw solid #222;
+    }
+
+    .pagecol.featured  + .pagecol + .pagecol .slanted-border::before {
+        border-left: 100vw solid #FFF;
+    }
+
+    .slanted-border::before {
+        border-left: 100vw solid #FFF;
+    }
+
+    .slanted-border::after {
+        border-right: 100vw solid #FFF;
+    }
+
+    .pagecol.featured .slanted-border::after {
+        border-right: 100vw solid #222;
+    }
+}

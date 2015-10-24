@@ -1,0 +1,22 @@
+{
+    "name": "boltabandoned/slanted",
+    "description": "Slanted theme for bolt built upon a flex grid.",
+    "type": "bolt-theme",
+    "keywords": ["theme", "flexbox", "slanted"],
+    "require": {
+        "bolt/bolt": ">=2.0.0,<3.0.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alan Smithee",
+            "email": "alan.smithee@example.com"
+        }
+    ],
+  "extra": {
+        "bolt-screenshots": [
+            "screenshots/listing.png",
+            "screenshots/home.png"
+        ]
+    }
+}
