@@ -1,8 +1,17 @@
 {% extends '_partials/_base.twig' %}
 {% block body %}
 
+{#
+ # Uncomment the following line if you have homepage set
+ # to a record and still want listing on the homepage
+ #}
 {#{% setcontent records = 'entries/latest/3' %}#}
-{% setcontent record = 'page/1' %}
+
+{#
+ # Uncomment the following line if you have homepage set
+ # to a listing and still want a full record on the homepage
+ #}
+{#{% setcontent record = 'page/1' %}#}
 
 {% if record %}
 {% set images =  record.imagelist ? record.imagelist : theme.images %}
