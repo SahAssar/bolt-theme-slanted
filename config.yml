@@ -3,6 +3,6 @@ gfont:
     - "Open+Sans:400,400italic,700,700italic"
 
 images:
-    - "elk/images/death-to-stock-dinner-damo-7.jpg" 
-    - "elk/images/death-to-stock-dinner-damo-3.jpg" 
-    - "elk/images/death-to-stock-dinner-damo-4.jpg"
+    - "slanted/images/death-to-stock-dinner-damo-7.jpg" 
+    - "slanted/images/death-to-stock-dinner-damo-3.jpg" 
+    - "slanted/images/death-to-stock-dinner-damo-4.jpg"
