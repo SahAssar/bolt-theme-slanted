@@ -34,8 +34,7 @@
             {{(record.body ? record.body : '<p>'~record|excerpt('1000000')|trim|preg_replace('/(\r?\n){2,}/', '</p><p>')~'</p>')|raw}}
         </div>
     </div>
-{% endif %}
-{% if records %}
+{% elseif records %}
     {% if not record %}
         <div class="Wallop" data-autoplay="5000">
             <div class="Wallop-list">
