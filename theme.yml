@@ -1,7 +1,14 @@
+# The fonts to load from google fonts.
 gfont: 
     - "Montserrat:700"
     - "Open+Sans:400,400italic,700,700italic"
 
+# These are the images that are shown on the frontpage slider and when a page
+# does not have its own images to show. These are either images in your 'files'
+# folder like '2016-06/img-1668.jpg' or like the defaults, in your 'theme' folder
+# like below. use paths that are relative to either 'files' or 'theme'. If you
+# have copied/renamed the theme to another folder to modify it you probably want
+# to replace 'slanted' with your theme name.
 images:
     - "slanted/images/death-to-stock-dinner-damo-7.jpg" 
     - "slanted/images/death-to-stock-dinner-damo-3.jpg" 
