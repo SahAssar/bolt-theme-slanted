@@ -1,8 +1,10 @@
 {% extends '_partials/_base.twig' %}
 {% block body %}
-<div class="flex no-margin">
-{% for sida in records %}
-    {{macros.pagecolumn(sida, loop)}}
-{% endfor %}
-</div>
+    <div class="flex no-margin">
+        {%- for record in records -%}
+            {%- with { 'records': records, 'record': record, 'loop': loop } only -%}
+            {{- block('pagecolumn') -}}
+            {%- endwith -%}
+        {%- endfor -%}
+    </div>
 {% endblock %}

@@ -1,0 +1,64 @@
+{% block columns %}
+    {%- for record in records -%}
+        <div class="flex four s-twelve no-margin col">
+            <div class="no-grow">
+                <h2 class="wrap">{{ record.gettitle() }}</h2>
+            </div>
+            <div>{{ record|excerpt(250) }}</div>
+            <div class="no-grow">
+                <a href="{{ record.link }}">Read more...</a>
+            </div>
+        </div>
+    {%- endfor -%}
+{% endblock %}
+
+{% block pagecolumn %}
+<div class="pagecol six m-twelve flex col no-margin no-grow {{ loop.index0 is even ? ' even': ' odd'}}{{ loop.first ? ' featured': '' }}">
+    <div class="columnimage slanted-border" style="background-image:url({{ record.getimage()|image(960,600,'c') }})"></div>
+    <div class="textholder">
+        <h2 class="wrap">{{ record.gettitle() }}</h2>
+        <p>{{ record|excerpt(500) }}</p>
+        <a href="{{ record.link }}">Read more...</a>
+    </div>
+</div>
+{% endblock %}
+
+{% block menu_item %}
+    {%- if item|default() -%}
+        <li class="index-{{ loop.index }}
+        {%- if loop.first %} first{% endif -%}
+        {%- if loop.last %} last{% endif -%}
+        {%- if item.submenu is defined %} dropdown{% endif -%}
+        {%- if item|current %} active{% endif -%}
+        {%- if item.submenu is defined %} sub-menu{% endif -%}">
+            <a href="{{ item.link }}"
+               {%- if item.title is defined %}title='{{ item.title|escape }}' {% endif -%}
+                    {%- if item.class is defined %}class='{{ item.class }}'{% endif %}>{{ item.label }}</a>
+            {%- if item.submenu is defined -%}
+                <ul class="sub-menu-items">
+                    {%- for submenu in item.submenu -%}
+                        {%- with { 'submenu': submenu, 'loop': loop } only -%}
+                        {{- block('menu_item') -}}
+                        {%- endwith -%}
+                    {%- endfor -%}
+                </ul>
+            {%- endif -%}
+        </li>
+    {%- endif -%}
+{% endblock %}
+
+{% block footer_menu_item %}
+    {%- if item|default() -%}
+        <li class="navbar-item index-{{ loop.index }}
+        {%- if loop.first %} first{% endif -%}
+        {%- if loop.last %} last{% endif -%}
+        {%- if item.submenu is defined %} dropdown{% endif -%}
+        {%- if item|current %} active{% endif -%}
+        {%- if item.class is defined %} {{ item.class }}{% endif -%}
+        {%- if item.submenu is defined %} sub-menu{% endif %}">
+            <a href="{{ item.link }}" {% if item.title is defined %}title='{{ item.title|escape }}' {% endif -%}
+                    {%- if item.class is defined %}class='{{ item.class }}'{% endif %}>{{ item.label }}</a>
+        </li>
+    {%- endif -%}
+{% endblock %}
+
