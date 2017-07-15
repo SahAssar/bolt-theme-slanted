@@ -6,7 +6,7 @@ This is the "Slanted" theme for bolt, built upon a variation of the same flex gr
 **Note:**  This is for Bolt 3. Check out the `bolt-v2` branch for a Bolt 2 compatible version.
 
 Listings:
-![Listing](https://raw.githubusercontent.com/SahAssar/bolt-theme-slanted/master/screenshots/listing.jpg "Listing")
+![Listing](https://raw.githubusercontent.com/SahAssar/bolt-theme-slanted/master/screenshots/listing.png "Listing")
 
 Homepage:
-![Homepage](https://raw.githubusercontent.com/SahAssar/bolt-theme-slanted/master/screenshots/home.jpg "Homepage")
+![Homepage](https://raw.githubusercontent.com/SahAssar/bolt-theme-slanted/master/screenshots/home.png "Homepage")
